@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">pilight Plugin for Tasker/Locale</string>
+    <string name="setting_name">pilight</string>
+    <string name="title_activity_edit">EditActivity</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

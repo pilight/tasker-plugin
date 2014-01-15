@@ -1,0 +1,128 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".EditActivity" >
+
+    <TextView
+        android:id="@+id/txtVServerAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="Server Address"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/editTServerAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtVServerAddress"
+        android:layout_alignRight="@+id/txtVServerAddress"
+        android:layout_below="@+id/txtVServerAddress"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/txtVPortNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTServerAddress"
+        android:layout_alignRight="@+id/editTServerAddress"
+        android:layout_below="@+id/editTServerAddress"
+        android:text="Port Number"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/editTPortNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtVPortNum"
+        android:layout_alignRight="@+id/editTServerAddress"
+        android:layout_below="@+id/txtVPortNum"
+        android:ems="10"
+        android:inputType="number" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/txtVLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTPortNum"
+        android:layout_alignRight="@+id/editTPortNum"
+        android:layout_below="@+id/editTPortNum"
+        android:text="Location"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/editTLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtVLocation"
+        android:layout_alignRight="@+id/txtVLocation"
+        android:layout_below="@+id/txtVLocation"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/txtVDevice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTLocation"
+        android:layout_below="@+id/editTLocation"
+        android:text="Device"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/editTDevice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtVDevice"
+        android:layout_below="@+id/txtVDevice"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/txtVState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTDevice"
+        android:layout_below="@+id/editTDevice"
+        android:text="State"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <RadioGroup
+        android:id="@+id/radioGState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtVState"
+        android:layout_below="@+id/txtVState" >
+
+        <RadioButton
+            android:id="@+id/radioOn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="On" />
+
+        <RadioButton
+            android:id="@+id/radioOff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Off" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioGState"
+        android:layout_alignRight="@+id/editTLocation"
+        android:layout_below="@+id/radioGState"
+        android:onClick="finishActivity"
+        android:text="Accept" />
+
+</RelativeLayout>
