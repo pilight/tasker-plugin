@@ -17,8 +17,9 @@ import android.util.Log;
 public final class FireReceiver extends BroadcastReceiver
 {
 	
-	String mServer, mPort, mLocation, mDevice, mState;
+	String mServer, mPort, mLocation, mDevice, mState, mValue = "";
 	int mPortNum;
+	JSONObject mValues, mCode, mTCPObject;
 	
     @Override
     public void onReceive(final Context context, final Intent intent)
@@ -29,17 +30,26 @@ public final class FireReceiver extends BroadcastReceiver
         	mLocation = intent.getStringExtra("Location");
         	mDevice = intent.getStringExtra("Device");
         	mState = intent.getStringExtra("State");
-        	JSONObject mCode = new JSONObject();
+        	mValue = intent.getStringExtra("Value");
+        	
+        	mValues = new JSONObject();
+        	try {
+        		mValues.put("dimlevel", mValue);
+        	} catch (JSONException e) {
+        	   // TODO Auto-generated catch block
+           	   e.printStackTrace();
+        	}
+        	mCode = new JSONObject();
         	try {
         	    mCode.put("state", mState);
         	    mCode.put("device", mDevice);
         	    mCode.put("location", mLocation);
-        	    
+        	    mCode.put("values", mValues);        	    
         	} catch (JSONException e) {
         	    // TODO Auto-generated catch block
         	    e.printStackTrace();
         	}
-        	JSONObject mTCPObject = new JSONObject();
+        	mTCPObject = new JSONObject();
         	try {
         	    mTCPObject.put("message", "send");
         	    mTCPObject.put("code", mCode);
